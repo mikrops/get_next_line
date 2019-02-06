@@ -6,22 +6,34 @@
 #    By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/19 01:02:44 by mmonahan          #+#    #+#              #
-#    Updated: 2019/01/19 04:23:31 by mmonahan         ###   ########.fr        #
+#    Updated: 2019/02/05 20:45:55 by mmonahan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ./libft/libft.a
 
-all: #$(NAME)
+all: $(NAME)
 
-#$(NAME):
-		gcc -Wall -Wextra -Werror get_next_line.c get_next_line.h $(NAME)
-		./a.out test.txt
+$(NAME):
+		#мэйк библиотеки
+		@make -C libft/ fclean && make -C libft/
+		#добавляем в библиотеку gnl
+		@clang -Wall -Wextra -Werror -I libft/includes -o get_next_line.o -c get_next_line.c
+		#добавляем в библиотеку main
+		@clang -Wall -Wextra -Werror -I libft/includes -o main.o -c main.c
+		#компилируем test_gnl
+		@clang -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
+		#запускаем test_gnl
+		@./test_gnl
 
 clean:
-		rm -f *.gch
+		#удаляем файлы компиляции .gch
+		@rm -f *.o
+		@make -C libft/ clean
 
 fclean: clean
-		rm -f a.out
+		#удаляем main (убрать перед проверкой)
+		@rm -f test_gnl
+		@make -C libft/ fclean
 
 re: fclean all

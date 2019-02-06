@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/18 21:05:46 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/02/05 19:15:32 by mmonahan         ###   ########.fr       */
+/*   Created: 2019/02/05 20:31:46 by mmonahan          #+#    #+#             */
+/*   Updated: 2019/02/05 20:32:26 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
-# define BUFF_SIZE 180
+#include "get_next_line.h"
 
-# include "./libft/libft.h"
-# include <fcntl.h>
+int		main(void)
+{
+	int		fd;
+	char	*str;
+	int		i;
 
-int	get_next_line(const int fd, char **line);
-
-#endif
+	str = "aaa";
+	i = 1;
+	fd = open("test.txt", O_RDONLY);
+	while (i)
+	{
+		i = get_next_line(fd, &str);
+		ft_putstr(str);
+	}
+	close(fd);
+	return (0);
+}
