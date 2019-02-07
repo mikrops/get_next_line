@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 21:05:18 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/02/05 20:44:10 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/02/07 16:09:09 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	get_next_line(const int fd, char **line)
 	char		buf[BUFF_SIZE + 1];
 	char		*tmp;
 
-	if (fd < 0 || line == NULL)
+	if (fd < 0 || fd >= 10240 || line == NULL)
 		return (-1);
 	if (ft_memset(buf, 0, BUFF_SIZE + 1) && (ret = 1) && m[fd] == NULL)
 		m[fd] = ft_memalloc(1);
