@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 20:31:46 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/02/07 16:02:04 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/02/07 16:30:45 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int		main(void)
 	ft_putstr("--test of file\n");
 	str = "aaa";
 	i = 1;
-	fd = open("--test.txt", O_RDONLY);
+	fd = open("test.txt", O_RDONLY);
 	while (i > 0)
 	{
 		i = get_next_line(fd, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
@@ -41,7 +41,7 @@ int		main(void)
 		i = get_next_line(10240, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
@@ -55,7 +55,7 @@ int		main(void)
 		i = get_next_line(fd, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
@@ -69,7 +69,7 @@ int		main(void)
 		i = get_next_line(fd, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
@@ -83,7 +83,7 @@ int		main(void)
 		i = get_next_line(fd, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
@@ -97,7 +97,7 @@ int		main(void)
 		i = get_next_line(fd, &str);
 		ft_putstr("gnl = ");
 		ft_putnbr(i);
-		ft_putstr("\t - str = ");
+		ft_putstr("\t - **line = ");
 		ft_putstr(str);
 		ft_putstr("\n");
 	}
